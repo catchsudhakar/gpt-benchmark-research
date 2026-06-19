@@ -1,3 +1,5 @@
+from urllib import response
+
 from dotenv import load_dotenv
 from openai import OpenAI
 import os
@@ -12,10 +14,14 @@ class GPTClient:
         self.model = model
         self.temperature = temperature
     
-    def complete(self, messages: list) -> str:
+    def complete(self, messages: list) -> dict:
         response = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
             temperature=self.temperature
         )
-        return response.choices[0].message.content
+        return {
+        "text": response.choices[0].message.content,
+        "usage": response.usage
+        }
+  

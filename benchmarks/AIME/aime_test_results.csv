@@ -1,0 +1,3 @@
+id,question,ground_truth,model_answer_extracted,correct,latency in seconds,cost in USD
+0,Patrick started walking at a constant rate along a,277,277,True,12.870687333997921,0.0015656
+1,Find the number of positive integer palindromes wr,62,62,True,44.071881833006046,0.0060036
